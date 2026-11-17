@@ -1,0 +1,36 @@
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    /* Standard size */
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    /* Standard grey */
+    font-family: var(--font-body);
+    /* Ensure body font */
+}
+
+.content p {
+    margin-bottom: 25px;
+}
+
+.content strong {
+    color: var(--color-primary);
+    /* Highlight with orange instead of white/default */
+    font-weight: 700;
+}
+
+.visionText {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

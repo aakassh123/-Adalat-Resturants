@@ -1,0 +1,122 @@
+.outer, .staticSection {
+    position: relative;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(192, 108, 66, 0.2), transparent 60%),
+        var(--color-ink);
+    color: #fff;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 34px;
+    overflow: hidden;
+    padding: 70px 0 50px;
+}
+
+.header { text-align: center; }
+.eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 12px; }
+.heading { color: #fff; font-size: clamp(1.7rem, 3.4vw, 2.8rem); margin-bottom: 12px; }
+.subheading { color: rgba(255, 255, 255, 0.68); max-width: 720px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+
+.track {
+    display: flex;
+    gap: 28px;
+    padding: 0 max(24px, calc((100vw - 1200px) / 2 + 24px));
+    width: max-content;
+    will-change: transform;
+}
+
+.card {
+    width: min(78vw, 400px);
+    flex-shrink: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #2c211a, #1b140f);
+    border: 1px solid rgba(216, 162, 74, 0.22);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    transition: transform 0.5s var(--ease-out), border-color 0.4s ease;
+}
+
+.card:hover { transform: translateY(-8px); border-color: rgba(216, 162, 74, 0.7); }
+
+.imageWrapper { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.cardImage { object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.card:hover .cardImage { transform: scale(1.08); }
+
+.badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--color-gold);
+    color: var(--color-ink);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.index {
+    position: absolute;
+    right: 16px;
+    bottom: 8px;
+    font-family: var(--font-heading), serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1;
+}
+
+.cardBody { padding: 24px 26px 28px; }
+.cardTitle { font-size: 1.4rem; color: #fff; margin-bottom: 10px; }
+.cardDescription { color: rgba(255, 255, 255, 0.68); font-size: 0.97rem; line-height: 1.7; }
+
+.endCard {
+    width: min(60vw, 280px);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    border: 1px dashed rgba(216, 162, 74, 0.6);
+    border-radius: 16px;
+    color: var(--color-gold);
+    font-family: var(--font-heading), serif;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.4s var(--ease-out);
+}
+
+.endCard:hover { background: var(--color-gold); color: var(--color-ink); }
+
+.bar {
+    width: min(320px, 60vw);
+    height: 2px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar span { display: block; height: 100%; background: var(--color-gold); }
+
+/* reduced-motion fallback */
+.staticSection { padding: 90px 0; }
+.staticRow { display: flex; gap: 24px; overflow-x: auto; padding: 40px 24px; scroll-snap-type: x mandatory; margin-top: 10px; }
+.staticRow .card { scroll-snap-align: center; }
+.more { text-align: center; }
+.moreBtn { display: inline-flex; gap: 10px; align-items: center; color: var(--color-gold); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+    .sticky { gap: 22px; padding: 80px 0 40px; justify-content: flex-start; }
+    .subheading { display: none; }
+}

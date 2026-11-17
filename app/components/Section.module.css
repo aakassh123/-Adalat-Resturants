@@ -1,0 +1,30 @@
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.dark {
+    background-color: var(--color-bg-paper);
+    background-image: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(216, 162, 74, 0.08), transparent 70%);
+}
+
+.heading {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin-bottom: 56px;
+    position: relative;
+    width: 100%;
+}
+
+.heading::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 18px auto 0;
+}
+
+@media (max-width: 768px) {
+    .section { padding: 70px 0; }
+}

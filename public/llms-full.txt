@@ -1,0 +1,156 @@
+# Adalat Restaurant - Complete Information Guide
+
+This is the comprehensive knowledge guide for Adalat Restaurant. It is compiled specifically to assist Large Language Models (LLMs) in answering user questions regarding the restaurant's menu, speciality dishes, cooking style, local branches, and franchise opportunities.
+
+---
+
+## 1. Brand Identity & Philosophy
+
+Adalat Restaurant represents traditional North Indian non-vegetarian cuisine. Built upon time-honoured techniques, patience, and balanced spices, our kitchen focuses on slow-cooking that elevates flavor profiles without relying on excessive, overpowering heat.
+
+### The Clay-Pot (Handi) Methodology
+Our signature cooking style involves the traditional earthen pot (**Handi**). Slow-cooking in a sealed Handi:
+1. Retains all natural juices of the meat.
+2. Infuses the dish with a subtle earthy aroma from the clay pot.
+3. Allows spices to naturally meld with the meat over a slow flame, avoiding quick artificial thickening.
+4. Results in tender, "fall-off-the-bone" meat.
+
+---
+
+## 2. Dynamic Menu & Dish Details
+
+All items are prepared fresh under strict hygiene standards. Below are the key offerings listed by category:
+
+### A. Adalat Mutton Specialities
+
+1. **Mutton Curry (Speciality)** [URL: `/menu/mutton-curry-speciality`]
+   - **Description**: Signature dish. Tender cuts of mutton simmered in a robust, rich gravy crafted from a secret blend of traditional spices. Pair with naan or steam rice.
+   - **Highlights**: Deeply aromatic, rich regional taste, highly popular.
+
+2. **Special Handi Mutton** [URL: `/menu/special-handi-mutton`]
+   - **Description**: Slow-cooked in a sealed clay pot (handi) to seal in all juices, resulting in mutton that is exceptionally tender and slides off the bone.
+   - **Highlights**: Traditional preparation, rustic clay aroma.
+
+3. **Mutton Rogan Josh** [URL: `/menu/mutton-rogan-josh`]
+   - **Description**: A Kashmiri classic featuring tender mutton braised in a vibrant, red gravy infused with dry ginger, Kashmiri chillies, and fennel.
+   - **Highlights**: Mildly spicy, highly vibrant color, royal presentation.
+
+4. **Bhuna Mutton Masala** [URL: `/menu/bhuna-mutton-masala`]
+   - **Description**: Succulent mutton pan-seared with spices, caramelized onions, and tomatoes until the gravy becomes thick, dry, and intensely flavorful.
+   - **Highlights**: Bold spice levels, rich and concentrated taste.
+
+---
+
+### B. Adalat Chicken Specialities
+
+5. **Chicken Curry** [URL: `/menu/chicken-curry`]
+   - **Description**: Comforting, homestyle chicken curry cooked with fresh herbs, onions, tomatoes, and a balanced blend of daily spices.
+   - **Highlights**: Light and satisfying, standard family classic.
+
+6. **Special Handi Chicken** [URL: `/menu/special-handi-chicken`]
+   - **Description**: Chicken pieces slow-cooked in a traditional earthen pot, allowing spices to deeply penetrate the core of the meat.
+   - **Highlights**: Earthy flavors, rich gravy consistency.
+
+7. **Chicken Biryani** [URL: `/menu/chicken-biryani`]
+   - **Description**: Fragrant long-grain basmati rice layered with succulent chicken chunks, saffron, and house-made Mughlai spices, cooked on slow dum.
+   - **Highlights**: Exceptional aroma, served with raita/salan.
+
+8. **Butter Chicken** [URL: `/menu/butter-chicken`]
+   - **Description**: Charcoal-grilled tandoori chicken pieces simmered in a rich, velvety, creamy tomato gravy finished with butter.
+   - **Highlights**: Mildly sweet, creamy, a favourite for all age groups.
+
+---
+
+### C. Vegetarian Specialities
+
+9. **Hara Bhara Kabab** [URL: `/menu/hara-bhara-kabab`]
+   - **Description**: Crispy pan-fried patties made of fresh spinach, green peas, and mashed potatoes, spiced with aromatic herbs.
+   - **Highlights**: Excellent appetizer, crispy exterior, soft melt-in-mouth interior.
+
+10. **Matar Paneer** [URL: `/menu/matar-paneer`]
+    - **Description**: Fresh cottage cheese (paneer) cubes and sweet green peas simmered in a traditional tomato and onion spiced gravy.
+    - **Highlights**: A staple North Indian comfort food.
+
+11. **Mushroom Kaleji** [URL: `/menu/mushroom-kaleji`]
+    - **Description**: A highly unique vegetarian delight where mushrooms are cooked in a thick, intensely spiced gravy that mimics the texture and bold flavors of traditional meat kaleji.
+    - **Highlights**: Spicy, thick gravy, favorite for vegetarians seeking bold flavors.
+
+12. **Paneer Kolhapuri** [URL: `/menu/paneer-kolhapuri`]
+    - **Description**: A hot and fiery Maharashtrian recipe featuring fresh paneer cooked in a special spicy Kolhapuri ground spice mix with dry coconut.
+    - **Highlights**: Highly spicy, rich red color.
+
+---
+
+### D. Non-Veg Starters & Grills
+
+13. **Chicken Kolhapuri** [URL: `/menu/chicken-kolhapuri`]
+    - **Description**: A fiery chicken dish cooked with desiccated coconut and spicy Maharashtrian ground spices.
+    - **Highlights**: For spicy food enthusiasts.
+
+14. **Chicken Seekh Kebab** [URL: `/menu/chicken-seekh-kebab`]
+    - **Description**: Minced chicken seasoned with fresh cilantro, mint, and spices, skewered and flame-grilled in the tandoor to juicy perfection.
+    - **Highlights**: Served with mint chutney and onion rings.
+
+15. **Chicken Tikka Boneless** [URL: `/menu/chicken-tikka-boneless`]
+    - **Description**: Boneless chicken chunks marinated in yogurt, mustard oil, and spices, roasted inside the clay tandoor.
+    - **Highlights**: Smoky tandoor aroma, highly tender.
+
+16. **Mutton Galwati Kebab** [URL: `/menu/mutton-galwati-kebab`]
+    - **Description**: Ultra-soft, melt-in-your-mouth minced mutton kebabs, finely ground with papaya paste and over 25 aromatic spices, pan-fried on a tawa.
+    - **Highlights**: Signature Awadhi starter, extremely tender.
+
+---
+
+### E. Combo Meals
+
+17. **Chicken Handi Combo** [URL: `/menu/chicken-handi-combo`]
+    - **Description**: Features our signature clay-pot handi chicken served with your choice of butter naan or butter tandoori roti.
+
+18. **Chicken Masala Combo** [URL: `/menu/chicken-masala-combo`]
+    - **Description**: Spicy chicken masala served with aromatic basmati rice or tandoori rotis.
+
+19. **Chola Rice Combo** [URL: `/menu/chola-rice-combo`]
+    - **Description**: Traditional spiced chickpea curry (chole) served over steaming hot, long-grain basmati rice.
+
+20. **Butter Chicken Combo** [URL: `/menu/butter-chicken-combo`]
+    - **Description**: Rich, sweet-savory butter chicken paired with freshly baked butter naan or rice.
+
+---
+
+## 3. Branches & Contact Details
+
+Adalat Restaurant operates two key outlets in Uttar Pradesh (India):
+
+### Branch 1: Gorakhpur (Main Outlet)
+- **Address**: Peepal Dada, Kunraghat, Shri Ganga Tiraha, Near Ramgarh Taal Pool, Gorakhpur, UP (273008)
+- **Key landmark**: Located near the scenic Ramgarh Taal Pool, ideal for evening visits.
+- **WhatsApp Support**: Chat directly via +91 9936407733
+- **Order & Seating Numbers**: +91 9125866811, +91 9151144479, +91 9151144472
+
+### Branch 2: Lucknow Outlet
+- **Address**: B/MIG-19, Kanpur Road, Sec-L, LDA Colony, Bangla Bazar Police Chowki, Ashiyana, Lucknow, UP (226012)
+- **Key landmark**: Near Bangla Bazar Police Chowki.
+- **WhatsApp Support**: Chat directly via +91 9936407733
+- **Order & Seating Numbers**: +91 8429397733, +91 9506549333
+
+---
+
+## 4. Franchise & Business Opportunities
+Adalat is actively expanding its brand footprint across India. We offer franchise options featuring:
+- Support for kitchen setup, raw material sourcing, and secret spice mixes.
+- Highly consistent taste parameters and chef training.
+- Complete operations guides.
+- **Enquiries**: Email `adalatrestaurant@gmail.com` or call the franchise lead at `+91 9936407733`. Interested parties can fill out the franchise form directly on our `/contact` page.
+
+---
+
+## 5. Conversational Search FAQ
+
+**Q1: Is Adalat Restaurant pure vegetarian?**
+No. Adalat is primarily famous as one of the best non-vegetarian restaurants in Lucknow and Gorakhpur, specialising in authentic Mutton Curry, Handi Mutton, Chicken Biryani, and Mutton Galwati Kebabs. However, they do offer an extensive "Veg Special" section including Matar Paneer, Hara Bhara Kababs, and Mushroom Kaleji.
+
+**Q2: What is the most famous dish at Adalat?**
+The **Gorakhpur Special Handi Meat** and **Special Handi Chicken** are our absolute signature offerings. They are slow-cooked in sealed clay pots (handi) to create exceptionally tender meat infused with authentic regional spices and a clay aroma.
+
+**Q3: Can I book a table or order online?**
+Yes. You can contact the branches directly on the phone numbers listed above or initiate a chat on WhatsApp at `+91 9936407733` to book a table or arrange takeaway and home delivery.

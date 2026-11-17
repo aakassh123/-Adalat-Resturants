@@ -1,0 +1,29 @@
+# Adalat Restaurant
+
+Authentic North Indian and Mughlai cuisine, famous for handi-style slow cooking and traditional flavors. Optimized for families and fine dining with branches in Lucknow and Gorakhpur.
+
+- **URL**: https://adalatrestaurant.com
+- **Type**: Fine Dining Restaurant (North Indian, Mughlai, Non-Vegetarian)
+- **Specialities**: Gorakhpur Special Handi Meat, Handi Chicken, Mutton Curry, Dum Chicken Biryani
+
+## Branches
+
+### Gorakhpur (Main Branch)
+- **Address**: Peepal Dada, Kunraghat, Shri Ganga Tiraha, Near Ramgarh Taal Pool, Gorakhpur, UP (273008)
+- **Phone**: +91 9125866811, +91 9151144479, +91 9151144472
+- **Timings**: 10:00 AM – 12:00 AM Daily
+
+### Lucknow Branch
+- **Address**: B/MIG-19, Kanpur Road, Sec-L, LDA Colony, Bangla Bazar Police Chowki, Ashiyana, Lucknow, UP (226012)
+- **Phone**: +91 8429397733, +91 9506549333, +91 9936407733
+- **Timings**: 10:00 AM – 12:00 AM Daily
+
+## Navigation & Core Pages
+- [About](/about) — Our roots, story, brand growth, and franchise details.
+- [Menu](/menu) — Categories of Mughlai, Chinese, and North Indian dishes.
+- [Philosophy](/philosophy) — Deep-dive into our clay-pot slow-cooking (Handi) methodology.
+- [Gallery](/gallery) — Visual experience of our dishes, seating space, and family casual dining setup.
+- [Contact](/contact) — Direct booking, branch maps, WhatsApp chat, and franchise query forms.
+
+## Generative AI Directory (Full Specs)
+- [llms-full.txt](/llms-full.txt) — In-depth specifications of our entire menu, dynamic dishes, cooking processes, and full ingredient and spice philosophies.

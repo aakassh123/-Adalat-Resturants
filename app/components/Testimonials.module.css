@@ -1,0 +1,44 @@
+.section {
+    padding: 120px 0;
+    background:
+        radial-gradient(ellipse 50% 50% at 0% 100%, rgba(192, 108, 66, 0.08), transparent 60%),
+        var(--color-bg);
+}
+
+.header { text-align: center; margin-bottom: 64px; }
+.heading { font-size: clamp(2rem, 4vw, 3rem); color: var(--color-text); margin-bottom: 12px; }
+.subheading { color: var(--color-text-muted); font-size: 1.1rem; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.card {
+    position: relative;
+    background: #fff;
+    padding: 46px 34px 34px;
+    border-radius: 14px;
+    border: 1px solid rgba(192, 108, 66, 0.14);
+    box-shadow: 0 10px 40px rgba(22, 17, 13, 0.06);
+    transition: transform 0.5s var(--ease-out), box-shadow 0.5s ease;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+    border-radius: 0 0 3px 3px;
+}
+
+.card:hover { transform: translateY(-10px); box-shadow: 0 24px 60px rgba(22, 17, 13, 0.12); }
+
+.quoteIcon { color: var(--color-gold); opacity: 0.55; margin-bottom: 18px; }
+.reviewText { font-family: var(--font-heading), serif; font-style: italic; font-size: 1.12rem; line-height: 1.85; color: var(--color-text); margin-bottom: 24px; }
+.author { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.78rem; color: var(--color-primary); }
+
+@media (max-width: 900px) {
+    .section { padding: 80px 0; }
+    .grid { grid-template-columns: 1fr; }
+}
