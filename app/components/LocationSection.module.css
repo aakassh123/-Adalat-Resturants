@@ -68,4 +68,15 @@
     .branches { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 480px) {
+    .section { padding: 56px 0; }
+    .card { padding: 24px 16px; gap: 16px; }
+    .iconWrapper { width: 56px; height: 56px; }
+    .city { font-size: 1.35rem; }
+    .details { font-size: 0.95rem; }
+    .branch { padding: 22px 18px; }
+    .branchActions { flex-direction: column; width: 100%; }
+    .pill, .pillGhost { justify-content: center; width: 100%; padding: 11px 18px; }
+}
+
 .info { min-width: 0; }

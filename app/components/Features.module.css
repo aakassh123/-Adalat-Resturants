@@ -133,4 +133,15 @@
     .stepNum { font-size: 4.5rem; }
 }
 
+@media (max-width: 480px) {
+    .section { padding: 60px 0 40px; }
+    .heading { font-size: 1.75rem; }
+    .subheading { font-size: 0.95rem; margin-bottom: 24px; }
+    .stepBody { padding: 22px 18px; }
+    .cardTitle { font-size: 1.45rem; }
+    .cardDescription { font-size: 0.95rem; line-height: 1.7; }
+    .stepNum { font-size: 3.5rem; right: 14px; }
+    .iconWrapper { width: 50px; height: 50px; margin-bottom: 18px; }
+}
+
 .header { position: relative; }

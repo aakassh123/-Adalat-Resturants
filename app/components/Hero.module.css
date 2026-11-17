@@ -82,13 +82,14 @@
 }
 
 .title {
-    font-size: clamp(2.5rem, 6.6vw, 5.2rem);
-    line-height: 1.08;
+    font-size: clamp(1.9rem, 6vw, 5rem);
+    line-height: 1.1;
     margin-bottom: 1.4rem;
     font-weight: 700;
     color: #fff;
     letter-spacing: -0.01em;
     text-shadow: 0 6px 40px rgba(0, 0, 0, 0.45);
+    word-break: break-word;
 }
 
 .rule {
@@ -196,6 +197,13 @@
 
 @media (max-width: 768px) {
     .hero { padding: 120px 0 70px; }
-    .buttons { flex-direction: column; align-items: stretch; }
+    .buttons { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto; }
     .scrollCue { display: none; }
+}
+
+@media (max-width: 480px) {
+    .hero { padding: 105px 0 50px; min-height: 85svh; }
+    .tall { min-height: 90svh; }
+    .subtitle { font-size: 0.95rem; margin-bottom: 2rem; }
+    .primaryBtn, .outlineBtn { padding: 13px 22px; font-size: 0.75rem; width: 100%; }
 }

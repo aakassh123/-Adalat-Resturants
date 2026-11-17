@@ -93,3 +93,18 @@
     .nextBtn { right: 8px; }
     .navBtn { width: 42px; height: 42px; }
 }
+
+@media (hover: none) {
+    .caption {
+        opacity: 1;
+        transform: none;
+        padding: 30px 16px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galleryGrid { grid-auto-rows: 210px; gap: 14px; }
+    .captionTitle { font-size: 0.98rem; }
+    .modalImage { max-height: 70vh; }
+    .closeBtn { top: 12px; right: 12px; width: 40px; height: 40px; }
+}

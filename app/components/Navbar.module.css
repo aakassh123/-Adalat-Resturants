@@ -212,6 +212,50 @@
     .mobileMenu { display: none; }
 }
 
-@media (max-width: 420px) {
-    .logoImage { height: 48px; }
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 10px;
+        top: 8px;
+    }
+    .bar {
+        padding: 6px 12px 6px 16px;
+        gap: 10px;
+    }
+    .logoImage {
+        height: 50px;
+        max-width: 150px;
+    }
+    .scrolled .logoImage {
+        height: 42px;
+    }
+    .callButton {
+        padding: 0.6rem;
+    }
+    .mobileCtas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+    .mobileCall,
+    .mobileWa {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        padding: 0 6px;
+    }
+    .bar {
+        padding: 5px 8px 5px 12px;
+    }
+    .logoImage {
+        height: 44px;
+        max-width: 125px;
+    }
+    .scrolled .logoImage {
+        height: 38px;
+    }
 }

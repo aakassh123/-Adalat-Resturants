@@ -95,6 +95,7 @@ button { font-family: var(--font-body), var(--font-hindi), sans-serif; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
 }
 
 .section { padding: 100px 0; }
@@ -150,6 +151,16 @@ button { font-family: var(--font-body), var(--font-hindi), sans-serif; }
 
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .section { padding: 54px 0; }
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.78rem;
+    margin: 6px 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

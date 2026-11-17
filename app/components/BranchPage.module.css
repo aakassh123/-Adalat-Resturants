@@ -49,4 +49,14 @@
     .mapWrap, .map { min-height: 340px; }
 }
 
+@media (max-width: 480px) {
+    .main { padding: 50px 0 50px; }
+    .title { font-size: 1.8rem; margin-bottom: 20px; }
+    .actions { flex-direction: column; width: 100%; }
+    .primary, .secondary { width: 100%; justify-content: center; }
+    .mapWrap, .map { min-height: 280px; }
+    .other { margin-top: 45px; }
+    .otherLink { font-size: 1.1rem; }
+}
+
 .info { min-width: 0; }
