@@ -7,7 +7,8 @@ export const siteConfig = {
   email: "adalatrestaurant@gmail.com",
   phone: "+919936407733",
   phoneDisplay: "+91 9936407733",
-  logo: "https://res.cloudinary.com/dil74qcsx/image/upload/v1784267882/adalat_btw9os.png",
+  logo: "/logo.png",
+  logoAbsolute: "https://adalatrestaurant.com/logo.png",
   hours: {
     days: "Mon - Sun",
     display: "10:00 AM - 12:00 AM",
@@ -19,7 +20,7 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/adalat_restaurant_gorakhpur?igsh=NTBqZHRzZGw3cXln",
   },
   menuPdf: "https://drive.google.com/file/d/1T-BVR8i3A3Eks-WmRCNXmOIQtxy_36NH/view?usp=sharing",
-  lastUpdated: "2026-11-14",
+  lastUpdated: "2026-11-17",
   branches: {
     gorakhpur: {
       id: "gorakhpur",
@@ -28,6 +29,10 @@ export const siteConfig = {
       street: "Peepal Dada, Kunraghat, Shri Ganga Tiraha, Near Ramgarh Taal Pool",
       region: "UP",
       postalCode: "273008",
+      geo: {
+        latitude: 26.7410,
+        longitude: 83.3930,
+      },
       displayLines: ["Peepal Dada, Kunraghat, Gorakhpur (UP)", "Shri Ganga Tiraha, Near Ramgarh Taal Pool"],
       phones: ["9125866811", "9151144479", "9151144472"],
     },
@@ -38,6 +43,10 @@ export const siteConfig = {
       street: "B/MIG-19, Kanpur Road, Sec-L, LDA Colony, Bangla Bazar Police Chowki, Ashiyana",
       region: "UP",
       postalCode: "226012",
+      geo: {
+        latitude: 26.7900,
+        longitude: 80.9100,
+      },
       displayLines: ["B/MIG-19, Kanpur Road, Sec-L, LDA Colony,", "Bangla Bazar Police Chowki, Ashiyana, Lucknow"],
       phones: ["8429397733", "9506549333"],
     },
@@ -56,13 +65,21 @@ export const waLink = (text) =>
   `https://wa.me/${siteConfig.phone.replace("+", "")}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export const restaurantSchema = (b) => ({
-  "@type": "Restaurant",
+  "@type": ["Restaurant", "FoodEstablishment"],
   "@id": `${siteConfig.url}/${b.id}#restaurant`,
   name: `${siteConfig.name} ${b.city}`,
-  image: siteConfig.logo,
+  image: [
+    siteConfig.logoAbsolute,
+    `${siteConfig.url}/hero.webp`,
+    `${siteConfig.url}/handi_meat.webp`,
+  ],
+  logo: siteConfig.logoAbsolute,
   url: `${siteConfig.url}/${b.id}`,
   telephone: telHref(b.phones[0]).replace("tel:", ""),
   email: siteConfig.email,
+  priceRange: "₹₹ (₹250 - ₹750)",
+  currenciesAccepted: "INR",
+  paymentAccepted: "Cash, Credit Card, UPI, Debit Card",
   address: {
     "@type": "PostalAddress",
     streetAddress: b.street,
@@ -71,14 +88,27 @@ export const restaurantSchema = (b) => ({
     postalCode: b.postalCode,
     addressCountry: "IN",
   },
+  ...(b.geo ? {
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: b.geo.latitude,
+      longitude: b.geo.longitude,
+    }
+  } : {}),
   hasMap: mapsLink(b),
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: siteConfig.hours.opens,
-    closes: siteConfig.hours.closes,
-  },
-  servesCuisine: ["North Indian", "Mughlai", "Non-Vegetarian"],
-  priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: siteConfig.hours.opens,
+      closes: siteConfig.hours.closes,
+    }
+  ],
+  servesCuisine: ["North Indian", "Mughlai", "Handi Meat", "Awadhi", "Biryani", "Non-Vegetarian"],
+  acceptsReservations: "True",
   hasMenu: `${siteConfig.url}/menu`,
+  sameAs: [
+    siteConfig.social.facebook,
+    siteConfig.social.instagram,
+  ],
 });

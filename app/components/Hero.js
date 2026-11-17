@@ -9,7 +9,7 @@ import styles from './Hero.module.css';
  * Scroll-driven hero: background parallax + zoom, content drifts and fades as you scroll.
  * `tall` = full-screen (home). Inner pages use a shorter hero.
  */
-const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false, tall = false }) => {
+const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false, tall = false, showLogo = false }) => {
     const ref = useRef(null);
     const reduce = useReducedMotion();
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -41,6 +41,23 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
 
             <div className={`container ${styles.container}`}>
                 <motion.div className={styles.content} style={contentStyle}>
+                    {showLogo && (
+                        <motion.div
+                            className={styles.heroLogoWrapper}
+                            initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <Image
+                                src="/logo.png"
+                                alt="Adalat Restaurant"
+                                width={200}
+                                height={100}
+                                className={styles.heroLogo}
+                                priority
+                            />
+                        </motion.div>
+                    )}
                     <motion.h1
                         className={styles.title}
                         initial={{ opacity: 0, y: 30 }}

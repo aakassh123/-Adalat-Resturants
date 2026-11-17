@@ -42,6 +42,45 @@
     will-change: transform, opacity;
 }
 
+.heroLogoWrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+    padding: 10px 24px;
+    background: rgba(255, 252, 247, 0.96);
+    border-radius: 18px;
+    border: 1px solid rgba(216, 162, 74, 0.4);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.heroLogoWrapper:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 45px rgba(216, 162, 74, 0.35);
+}
+
+.heroLogo {
+    height: 72px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    .heroLogo {
+        height: 54px;
+        max-width: 170px;
+    }
+    .heroLogoWrapper {
+        padding: 8px 18px;
+        margin-bottom: 1.2rem;
+    }
+}
+
 .title {
     font-size: clamp(2.5rem, 6.6vw, 5.2rem);
     line-height: 1.08;

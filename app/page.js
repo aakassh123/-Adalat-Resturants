@@ -12,17 +12,40 @@ import CTASection from "./components/CTASection";
 import { siteConfig } from "./lib/siteConfig";
 
 export const metadata = {
-  title: "Best Biryani & Handi in Gorakhpur | Adalat Restaurant India!",
-  description: "Authentic Mughlai and North Indian food with rich taste and quality ingredients. A great spot for family dining with comfortable seating and ambience.",
-  keywords: "Adalat Restaurant Gorakhpur, best restaurant in Gorakhpur, Mughlai restaurant Gorakhpur, family restaurant Gorakhpur",
+  title: "Adalat Restaurant | Best Handi Mutton, Chicken & Biryani in Gorakhpur & Lucknow",
+  description: "Welcome to Adalat Restaurant. Renowned for authentic slow-cooked Champaran Handi Mutton, Handi Chicken, and royal Awadhi Biryani in Gorakhpur & Lucknow.",
+  keywords: [
+    "Adalat Restaurant",
+    "Adalat Restaurant Gorakhpur",
+    "Adalat Restaurant Lucknow",
+    "Best Handi Mutton in Gorakhpur",
+    "Best Biryani in Gorakhpur",
+    "Best Non Veg Restaurant Gorakhpur",
+    "Handi Meat Kunraghat",
+    "Champaran Meat Gorakhpur",
+    "Best Chicken Handi Lucknow",
+  ],
   alternates: { canonical: siteConfig.url },
   openGraph: {
-    title: "Best Biryani & Handi in Gorakhpur | Adalat Restaurant",
-    description: "Authentic Mughlai and North Indian food with rich taste and quality ingredients.",
+    title: "Adalat Restaurant | Best Handi Mutton, Chicken & Biryani",
+    description: "Authentic North Indian & Mughlai dining in Gorakhpur & Lucknow. Famous for clay-pot Handi cooking and mouthwatering Biryani.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     type: "website",
-    images: [{ url: siteConfig.logo, alt: "Adalat Restaurant" }],
+    images: [
+      {
+        url: "/logo.png",
+        width: 1088,
+        height: 641,
+        alt: "Adalat Restaurant Official Logo",
+      },
+      {
+        url: "/home_hero_new.webp",
+        width: 1200,
+        height: 630,
+        alt: "Adalat Restaurant Ambiance & Food",
+      },
+    ],
   },
 };
 
@@ -34,6 +57,7 @@ export default function Home() {
       <main>
         <Hero
           tall
+          showLogo={true}
           title={
             <>
               Adalat Restaurant <br />

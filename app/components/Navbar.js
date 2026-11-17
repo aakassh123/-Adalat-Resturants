@@ -66,8 +66,8 @@ const Navbar = () => {
                     <Link href="/" className={styles.logo} aria-label="Adalat Restaurant home">
                         <Image
                             src={siteConfig.logo}
-                            alt="Adalat"
-                            width={150}
+                            alt="Adalat Restaurant - Authentic North Indian & Handi Dishes"
+                            width={180}
                             height={100}
                             className={styles.logoImage}
                             priority
@@ -106,6 +106,15 @@ const Navbar = () => {
             </header>
 
             <div id="mobile-menu" className={`${styles.mobileMenu} ${open ? styles.open : ''}`} aria-hidden={!open}>
+                <div className={styles.mobileLogoContainer}>
+                    <Image
+                        src={siteConfig.logo}
+                        alt="Adalat Restaurant"
+                        width={160}
+                        height={80}
+                        className={styles.mobileLogo}
+                    />
+                </div>
                 {links.map((l, i) => (
                     <Link
                         key={l.href}
