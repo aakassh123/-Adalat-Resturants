@@ -81,15 +81,42 @@ const Features = () => {
                                 exit={reduce ? undefined : { opacity: 0 }}
                                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             >
-                                <Image
-                                    src={features[active].image}
-                                    alt={features[active].alt}
-                                    fill
-                                    sizes="(max-width: 900px) 0px, 560px"
-                                    className={styles.cover}
-                                />
+                                {features[active].video ? (
+                                    <video
+                                        key={features[active].video}
+                                        src={features[active].video}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className={styles.cover}
+                                        poster={features[active].image}
+                                    />
+                                ) : (
+                                    <div className={styles.imageLivingWrapper}>
+                                        <Image
+                                            src={features[active].image}
+                                            alt={features[active].alt}
+                                            fill
+                                            sizes="(max-width: 900px) 0px, 560px"
+                                            className={`${styles.cover} ${styles.livingZoom}`}
+                                            priority
+                                        />
+                                        {/* Cinematic Rising Steam & Simmering Heat Effect */}
+                                        <div className={styles.steamContainer} aria-hidden="true">
+                                            <span className={`${styles.steamCloud} ${styles.steam1}`} />
+                                            <span className={`${styles.steamCloud} ${styles.steam2}`} />
+                                            <span className={`${styles.steamCloud} ${styles.steam3}`} />
+                                            <div className={styles.heatGlow} />
+                                        </div>
+                                    </div>
+                                )}
                             </motion.div>
                         </AnimatePresence>
+                        <div className={styles.liveBadge}>
+                            <span className={styles.liveDot} />
+                            <span>Slow Cooked & Simmering</span>
+                        </div>
                         <div className={styles.frameShade} />
                         <div className={styles.counter}>
                             <strong>{String(active + 1).padStart(2, '0')}</strong>
