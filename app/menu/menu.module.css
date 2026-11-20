@@ -27,6 +27,7 @@
 
 .viewMenuBtn:hover { background: var(--color-primary); color: #fff; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(192, 108, 66, 0.35); }
 
+.categoryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
 .categoryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 30px; }
 
 .categoryCard {
@@ -78,6 +79,7 @@
 .backButton:hover { background: var(--color-primary); color: #fff; }
 .currentCategoryLabel { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 0; color: var(--color-text); }
 
+.menuGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
 .menuGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 30px; }
 .cardLink { display: block; color: inherit; }
 .cardLink:hover { color: inherit; }
@@ -107,6 +109,8 @@
 
 @media (max-width: 700px) {
     .main { padding: 50px 0 80px; }
+    .categoryGrid, .menuGrid { grid-template-columns: 1fr; }
+    .categoryCard { aspect-ratio: 4 / 3.6; }
     .categoryGrid, .menuGrid { grid-template-columns: 1fr; gap: 20px; }
     .categoryCard { aspect-ratio: 4 / 3.4; }
     .navigationBar { gap: 14px; margin-bottom: 28px; }

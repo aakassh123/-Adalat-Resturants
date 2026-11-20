@@ -82,6 +82,8 @@
 }
 
 .title {
+    font-size: clamp(2.5rem, 6.6vw, 5.2rem);
+    line-height: 1.08;
     font-size: clamp(1.9rem, 6vw, 5rem);
     line-height: 1.1;
     margin-bottom: 1.4rem;
@@ -197,6 +199,7 @@
 
 @media (max-width: 768px) {
     .hero { padding: 120px 0 70px; }
+    .buttons { flex-direction: column; align-items: stretch; }
     .buttons { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto; }
     .scrollCue { display: none; }
 }

@@ -11,6 +11,9 @@ const Footer = () => {
                 <div className={`${styles.column} ${styles.brandCol}`}>
                     <Image
                         src={siteConfig.logo}
+                        alt="Adalat"
+                        width={200}
+                        height={80}
                         alt="Adalat Restaurant - Authentic North Indian Flavours"
                         width={220}
                         height={100}
