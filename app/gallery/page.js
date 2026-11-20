@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Reveal from "../components/Reveal";
+import SteamEffect from "../components/SteamEffect";
 import styles from "./gallery.module.css";
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -79,6 +80,9 @@ export default function Gallery() {
                                         sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 380px"
                                         className={styles.galleryImage}
                                     />
+                                    {(img.src.includes('handi') || img.src.includes('biryani') || img.src.includes('chicken') || img.src.includes('dish')) && (
+                                        <SteamEffect />
+                                    )}
                                     <span className={styles.caption}><span className={styles.captionTitle}>{img.title}</span></span>
                                 </button>
                             </Reveal>

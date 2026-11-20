@@ -58,6 +58,7 @@ export default function Home() {
         <Hero
           tall
           showLogo={true}
+          showHighlights={true}
           title={
             <>
               Adalat Restaurant <br />

@@ -103,6 +103,18 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/best-handi-mutton-lucknow`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/best-non-veg-restaurant-lucknow`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
   ];
 
   // Dynamically generate sitemap entries for all menu items

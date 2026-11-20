@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import ScrollWrapper from "../components/ScrollWrapper";
 import MediaSection from "../components/MediaSection";
+import SteamEffect from "../components/SteamEffect";
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -196,6 +197,7 @@ export default function BestHandiMuttonGorakhpur() {
                                         className={styles.contentImage}
                                         loading="lazy"
                                     />
+                                    <SteamEffect intensity="high" />
                                 </div>
                             </div>
                         </div>

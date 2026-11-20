@@ -1,12 +1,14 @@
 import styles from './Marquee.module.css';
 
 const items = [
-    "Gorakhpur Special Handi Meat",
-    "Handi Chicken",
-    "Mutton Curry",
-    "Dum Chicken Biryani",
-    "Authentic North Indian Flavours",
-    "Lucknow & Gorakhpur",
+    "🔥 Gorakhpur Special Handi Meat (Slow-Cooked 4h)",
+    "🏺 Authentic Mitti ki Handi on Woodfire Embers",
+    "🍗 Succulent Champaran Handi Chicken",
+    "🍚 Royal Awadhi Mutton Dum Biryani with Saffron",
+    "🌿 Stone-Ground Ancestral Spices & Kacchi Ghani Mustard Oil",
+    "🍢 Charcoal Roasted Tandoori Chicken & Juicy Tikkas",
+    "👑 Famous in Gorakhpur & Lucknow",
+    "⭐ 4.8★ Rated by 15,000+ Happy Food Lovers",
 ];
 
 const Marquee = () => (

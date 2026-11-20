@@ -3,36 +3,39 @@ import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import { ChefHat, Flame, Award, Heart } from 'lucide-react';
+import SteamEffect from './SteamEffect';
 import styles from './Features.module.css';
 
 const features = [
     {
         icon: <ChefHat size={30} />,
-        title: "Master Chefs",
-        description: "Experienced chefs preserving traditional cooking methods passed down through generations.",
+        title: "Master Handi Ustaads",
+        description: "Veteran chefs preserving ancestral Champaran and Awadhi slow-cooking techniques perfected over decades.",
         image: "/gallery/mutton-handi.webp",
-        alt: "Mutton handi prepared by Adalat's master chefs",
+        video: "/videos/mutton-handi.mp4",
+        alt: "Authentic Gorakhpur Special Handi Meat slow-cooked in clay pot at Adalat Restaurant",
     },
     {
         icon: <Flame size={30} />,
-        title: "Authentic Handi",
-        description: "Slow-cooked in traditional clay pots over wood fire for unmatched flavor and aroma.",
+        title: "Authentic Mitti ki Handi",
+        description: "Slow-simmered in traditional clay pots over woodfire embers, infusing earthy minerals, smoky aroma, and unrivaled taste.",
         image: "/gallery/chicken-handi.webp",
-        alt: "Chicken handi slow-cooked in a traditional clay pot",
+        video: "/videos/handi-signature.mp4",
+        alt: "Champaran Handi Chicken prepared in traditional earthen pot at Adalat Restaurant Gorakhpur & Lucknow",
     },
     {
         icon: <Award size={30} />,
-        title: "Premium Quality",
-        description: "Only the finest ingredients and spices, sourced fresh daily for authentic taste.",
+        title: "Kacchi Ghani & Pure Spices",
+        description: "Pure cold-pressed mustard oil, whole spices roasted and stone-ground fresh daily, and premium tender meat cuts.",
         image: "/gallery/tandoori-chicken.webp",
-        alt: "Tandoori chicken made with fresh premium ingredients",
+        alt: "Charcoal roasted Tandoori Chicken with authentic North Indian spices at Adalat Restaurant",
     },
     {
         icon: <Heart size={30} />,
-        title: "Heritage Recipes",
-        description: "Time-tested recipes that have delighted families for generations.",
+        title: "Dough-Sealed Dum Heritage",
+        description: "Every pot is sealed with dough to lock in precious steam and juices, guaranteeing melt-in-mouth tenderness in every bite.",
         image: "/gallery/chicken-biryani.webp",
-        alt: "Chicken biryani from a heritage family recipe",
+        alt: "Royal Awadhi Mutton Dum Biryani made with saffron and long-grain basmati at Adalat Restaurant",
     },
 ];
 
@@ -45,7 +48,22 @@ function Step({ feature, index, active, onActive }) {
     return (
         <article ref={ref} className={`${styles.step} ${active ? styles.stepActive : ''}`}>
             <div className={styles.stepImage}>
-                <Image src={feature.image} alt={feature.alt} fill sizes="(max-width: 900px) 100vw, 0px" className={styles.cover} />
+                {feature.video ? (
+                    <video
+                        src={feature.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className={styles.cover}
+                        poster={feature.image}
+                    />
+                ) : (
+                    <>
+                        <Image src={feature.image} alt={feature.alt} fill sizes="(max-width: 900px) 100vw, 0px" className={styles.cover} />
+                        <SteamEffect />
+                    </>
+                )}
             </div>
             <div className={styles.stepBody}>
                 <span className={styles.stepNum}>{String(index + 1).padStart(2, '0')}</span>
@@ -103,12 +121,7 @@ const Features = () => {
                                             priority
                                         />
                                         {/* Cinematic Rising Steam & Simmering Heat Effect */}
-                                        <div className={styles.steamContainer} aria-hidden="true">
-                                            <span className={`${styles.steamCloud} ${styles.steam1}`} />
-                                            <span className={`${styles.steamCloud} ${styles.steam2}`} />
-                                            <span className={`${styles.steamCloud} ${styles.steam3}`} />
-                                            <div className={styles.heatGlow} />
-                                        </div>
+                                        <SteamEffect intensity="high" />
                                     </div>
                                 )}
                             </motion.div>

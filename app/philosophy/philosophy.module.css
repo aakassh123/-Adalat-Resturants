@@ -113,6 +113,35 @@
     }
 }
 
+@media (max-width: 480px) {
+    .section {
+        padding: 50px 0;
+    }
+    .headingWrapper {
+        margin-bottom: 35px;
+    }
+    .mainHeading {
+        font-size: 1.75rem;
+        line-height: 1.25;
+    }
+    .textContent {
+        gap: 16px;
+    }
+    .text {
+        font-size: 0.96rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 360px) {
+    .mainHeading {
+        font-size: 1.5rem;
+    }
+    .text {
+        font-size: 0.9rem;
+    }
+}
+
 .philosophyBlock strong {
     color: var(--color-white);
     font-weight: 700;

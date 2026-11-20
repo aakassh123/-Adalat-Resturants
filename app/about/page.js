@@ -6,10 +6,28 @@ import ScrollWrapper from "../components/ScrollWrapper";
 import Link from "next/link";
 import styles from "./about.module.css";
 
+import { siteConfig } from "../lib/siteConfig";
+
 export const metadata = {
-    title: "About Adalat Restaurant | Biryani & Handi Gorakhpur India",
-    description: "Known for quality food, authentic flavors, and a consistent dining experience. Focused on taste, hygiene, and customer satisfaction.",
-    keywords: "about Adalat Restaurant, restaurant in Gorakhpur story, best dining experience Gorakhpur, authentic food Gorakhpur"
+    title: "About Adalat Restaurant | 20+ Years of Authentic Handi & Non-Veg Legacy in UP",
+    description: "Discover the heritage of Adalat Restaurant. Over 20 years of master craftsmanship in slow-cooked Champaran Handi Mutton, Awadhi Dum Biryani, and North Indian non-veg dining across Gorakhpur and Lucknow.",
+    keywords: [
+        "About Adalat Restaurant",
+        "Adalat Restaurant history",
+        "best non veg restaurant in Gorakhpur",
+        "best non veg restaurant in Lucknow",
+        "authentic handi meat heritage UP",
+        "Ramgarh Taal restaurant history",
+    ],
+    alternates: { canonical: `${siteConfig.url}/about` },
+    openGraph: {
+        title: "About Adalat Restaurant | Authentic Non-Veg Dining in UP",
+        description: "Over 20 years of traditional woodfire claypot cooking in Gorakhpur & Lucknow.",
+        url: `${siteConfig.url}/about`,
+        siteName: siteConfig.name,
+        type: "website",
+        images: [{ url: `${siteConfig.url}/hero_about.webp`, alt: "Adalat Restaurant Heritage Story" }],
+    },
 };
 
 export default function About() {

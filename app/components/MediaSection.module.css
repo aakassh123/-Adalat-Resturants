@@ -477,3 +477,10 @@
         padding: 9px 18px;
     }
 }
+
+@media (max-width: 360px) {
+    .heading { font-size: 1.45rem; }
+    .subHeading { font-size: 0.9rem; }
+    .statValue { font-size: 2rem; }
+    .articlePill { font-size: 0.78rem; padding: 8px 14px; }
+}

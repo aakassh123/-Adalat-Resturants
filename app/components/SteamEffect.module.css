@@ -1,0 +1,310 @@
+.steamContainer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none !important;
+    z-index: 3;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Warm thermal simmer underglow (simulates radiant heat from claypot / curry) */
+.heatGlow {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 45%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse 65% 50% at 50% 80%, rgba(255, 145, 45, 0.28) 0%, rgba(255, 95, 25, 0.12) 42%, transparent 72%);
+    filter: blur(18px);
+    mix-blend-mode: screen;
+    opacity: 0.85;
+    animation: simmerPulse 3.5s ease-in-out infinite alternate;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+@keyframes simmerPulse {
+    0% {
+        opacity: 0.6;
+        transform: translateX(-50%) scale(0.94);
+    }
+    100% {
+        opacity: 0.95;
+        transform: translateX(-50%) scale(1.06);
+    }
+}
+
+/* Base Steam Wisp Shape */
+.steamWisp {
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 252, 245, 0.42) 28%,
+        rgba(255, 245, 230, 0.16) 52%,
+        transparent 72%
+    );
+    filter: blur(16px);
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+/* Base Steam Mist Cloud Shape (Broader, softer atmospheric layer) */
+.steamCloud {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 220px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at 50% 60%,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 250, 240, 0.2) 35%,
+        transparent 68%
+    );
+    filter: blur(24px);
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+/* Wisp 1: Central billowing upward plume */
+.wisp1 {
+    left: 48%;
+    animation: steamRise1 4.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+/* Wisp 2: Drifting gently to the left with slow swirl */
+.wisp2 {
+    left: 42%;
+    animation: steamRise2 5.1s cubic-bezier(0.22, 0.61, 0.36, 1) infinite 1.3s;
+}
+
+/* Wisp 3: Drifting softly to the right with expansive bloom */
+.wisp3 {
+    left: 55%;
+    animation: steamRise3 5.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite 2.5s;
+}
+
+/* Wisp 4: Quick sizzling wisp from pot center */
+.wisp4 {
+    left: 50%;
+    animation: steamRise4 3.9s cubic-bezier(0.25, 0.55, 0.45, 1) infinite 3.4s;
+}
+
+/* Cloud 1: Soft broad haze floating up */
+.cloud1 {
+    left: 46%;
+    animation: cloudFloat1 6.2s ease-out infinite 0.6s;
+}
+
+/* Cloud 2: Gentle delayed thermal mist */
+.cloud2 {
+    left: 52%;
+    animation: cloudFloat2 6.8s ease-out infinite 3.2s;
+}
+
+/* Realistic Physics Keyframes for Rising Food Steam */
+
+@keyframes steamRise1 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 25px) scale(0.42) rotate(0deg);
+    }
+    18% {
+        opacity: 0.72;
+    }
+    50% {
+        opacity: 0.55;
+        transform: translate(calc(-50% + 14px), -65px) scale(1.15) rotate(12deg);
+    }
+    80% {
+        opacity: 0.22;
+        transform: translate(calc(-50% - 10px), -130px) scale(1.75) rotate(-8deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% - 22px), -185px) scale(2.2) rotate(-16deg);
+    }
+}
+
+@keyframes steamRise2 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.48) rotate(0deg);
+    }
+    22% {
+        opacity: 0.68;
+    }
+    55% {
+        opacity: 0.46;
+        transform: translate(calc(-50% - 22px), -75px) scale(1.3) rotate(-14deg);
+    }
+    85% {
+        opacity: 0.18;
+        transform: translate(calc(-50% - 34px), -145px) scale(1.9) rotate(-22deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% - 40px), -195px) scale(2.35) rotate(-28deg);
+    }
+}
+
+@keyframes steamRise3 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.45) rotate(0deg);
+    }
+    20% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.5;
+        transform: translate(calc(-50% + 24px), -70px) scale(1.22) rotate(16deg);
+    }
+    80% {
+        opacity: 0.2;
+        transform: translate(calc(-50% + 38px), -140px) scale(1.85) rotate(26deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + 46px), -200px) scale(2.4) rotate(34deg);
+    }
+}
+
+@keyframes steamRise4 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 15px) scale(0.38) rotate(0deg);
+    }
+    25% {
+        opacity: 0.8;
+    }
+    60% {
+        opacity: 0.4;
+        transform: translate(calc(-50% + 8px), -60px) scale(1.1) rotate(6deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% - 14px), -160px) scale(1.8) rotate(-10deg);
+    }
+}
+
+@keyframes cloudFloat1 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 15px) scale(0.65);
+    }
+    25% {
+        opacity: 0.42;
+    }
+    65% {
+        opacity: 0.22;
+        transform: translate(calc(-50% + 12px), -80px) scale(1.35);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + 20px), -160px) scale(1.9);
+    }
+}
+
+@keyframes cloudFloat2 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.6);
+    }
+    30% {
+        opacity: 0.38;
+    }
+    70% {
+        opacity: 0.18;
+        transform: translate(calc(-50% - 15px), -90px) scale(1.4);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% - 25px), -170px) scale(1.95);
+    }
+}
+
+/* High intensity variant (for large hero recipe / showcase dish images) */
+.intensityHigh .heatGlow {
+    width: 85%;
+    height: 55%;
+    opacity: 0.95;
+    background: radial-gradient(ellipse 70% 55% at 50% 80%, rgba(255, 145, 45, 0.35) 0%, rgba(255, 95, 25, 0.16) 45%, transparent 74%);
+}
+
+.intensityHigh .steamWisp {
+    width: 190px;
+    height: 190px;
+    filter: blur(20px);
+}
+
+.intensityHigh .steamCloud {
+    width: 300px;
+    height: 240px;
+    filter: blur(32px);
+}
+
+/* Mobile responsive scaling for compact dish aspect ratios */
+@media (max-width: 600px) {
+    .heatGlow {
+        height: 40%;
+        filter: blur(14px);
+    }
+    .steamWisp {
+        width: 100px;
+        height: 100px;
+        filter: blur(12px);
+    }
+    .steamCloud {
+        width: 160px;
+        height: 130px;
+        filter: blur(18px);
+    }
+    .intensityHigh .steamWisp {
+        width: 140px;
+        height: 140px;
+        filter: blur(15px);
+    }
+    .intensityHigh .steamCloud {
+        width: 220px;
+        height: 180px;
+        filter: blur(24px);
+    }
+}
+
+@media (max-width: 380px) {
+    .steamWisp {
+        width: 80px;
+        height: 80px;
+        filter: blur(10px);
+    }
+    .steamCloud {
+        width: 130px;
+        height: 100px;
+        filter: blur(14px);
+    }
+}
+
+/* Accessibility: respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .steamWisp,
+    .steamCloud,
+    .heatGlow {
+        animation: none !important;
+        opacity: 0.2 !important;
+        transform: translate(-50%, -20px) scale(1) !important;
+    }
+}

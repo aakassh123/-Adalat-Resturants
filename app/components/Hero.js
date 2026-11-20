@@ -3,13 +3,24 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { Sparkles, ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
 
 /**
  * Scroll-driven hero: background parallax + zoom, content drifts and fades as you scroll.
  * `tall` = full-screen (home). Inner pages use a shorter hero.
  */
-const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false, tall = false, showLogo = false }) => {
+const Hero = ({
+    title,
+    subtitle,
+    ctaText,
+    ctaLink,
+    backgroundImage,
+    blur = false,
+    tall = false,
+    showLogo = false,
+    showHighlights = false,
+}) => {
     const ref = useRef(null);
     const reduce = useReducedMotion();
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -28,7 +39,7 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
                 {backgroundImage && (
                     <Image
                         src={backgroundImage}
-                        alt=""
+                        alt="Adalat Restaurant - Authentic Handi Mutton, Chicken & Awadhi Biryani in Gorakhpur & Lucknow"
                         fill
                         priority
                         sizes="100vw"
@@ -41,6 +52,18 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
 
             <div className={`container ${styles.container}`}>
                 <motion.div className={styles.content} style={contentStyle}>
+                    {showHighlights && (
+                        <motion.div
+                            className={styles.topBadge}
+                            initial={{ opacity: 0, y: -15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.05 }}
+                        >
+                            <Sparkles size={14} className={styles.badgeSparkle} />
+                            <span>Gorakhpur & Lucknow’s Most Loved Non-Veg Landmark</span>
+                        </motion.div>
+                    )}
+
                     {showLogo && (
                         <motion.div
                             className={styles.heroLogoWrapper}
@@ -50,7 +73,7 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
                         >
                             <Image
                                 src="/logo.png"
-                                alt="Adalat Restaurant"
+                                alt="Adalat Restaurant Official Logo - Best Non Veg Restaurant in Gorakhpur & Lucknow"
                                 width={200}
                                 height={100}
                                 className={styles.heroLogo}
@@ -58,6 +81,7 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
                             />
                         </motion.div>
                     )}
+
                     <motion.h1
                         className={styles.title}
                         initial={{ opacity: 0, y: 30 }}
@@ -91,9 +115,65 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.5 }}
                         >
-                            <Link href={ctaLink} className={styles.primaryBtn}>{ctaText || "Explore"}</Link>
-                            <Link href="/contact" className={styles.outlineBtn}>Visit Adalat</Link>
+                            <Link href={ctaLink} className={styles.primaryBtn}>{ctaText || "Explore Menu"}</Link>
+                            <Link href="#popular-dishes" className={styles.outlineBtn}>Famous Dishes</Link>
                         </motion.div>
+                    )}
+
+                    {showHighlights && (
+                        <>
+                            {/* Mouthwatering Quick Specialities Bar */}
+                            <motion.div
+                                className={styles.heroHighlights}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.9, delay: 0.65 }}
+                            >
+                                <span className={styles.highlightsLabel}>Iconic Specialities:</span>
+                                <div className={styles.highlightsGrid}>
+                                    <Link href="#popular-dishes" className={styles.highlightPill}>
+                                        <span className={styles.pillIcon}>🏺</span>
+                                        <span className={styles.pillText}>Handi Meat</span>
+                                        <span className={styles.pillTag}>#1 Famous</span>
+                                    </Link>
+                                    <Link href="#popular-dishes" className={styles.highlightPill}>
+                                        <span className={styles.pillIcon}>🍗</span>
+                                        <span className={styles.pillText}>Handi Chicken</span>
+                                        <span className={styles.pillTag}>Bestseller</span>
+                                    </Link>
+                                    <Link href="#popular-dishes" className={styles.highlightPill}>
+                                        <span className={styles.pillIcon}>🍚</span>
+                                        <span className={styles.pillText}>Dum Biryani</span>
+                                        <span className={styles.pillTag}>Royal Feast</span>
+                                    </Link>
+                                    <Link href="#popular-dishes" className={styles.highlightPill}>
+                                        <span className={styles.pillIcon}>🔥</span>
+                                        <span className={styles.pillText}>Charcoal Tandoori</span>
+                                        <span className={styles.pillTag}>Juicy</span>
+                                    </Link>
+                                </div>
+                            </motion.div>
+
+                            {/* Trust & Accolades Row */}
+                            <motion.div
+                                className={styles.trustRow}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.8 }}
+                            >
+                                <span className={styles.trustItem}>
+                                    ⭐ <strong>4.8★ Rating</strong> (15,000+ Reviews)
+                                </span>
+                                <span className={styles.trustDot}>•</span>
+                                <span className={styles.trustItem}>
+                                    🏺 <strong>100% Earthen Clay Pot</strong> on Live Woodfire
+                                </span>
+                                <span className={styles.trustDot}>•</span>
+                                <span className={styles.trustItem}>
+                                    📍 <strong>Kunraghat, Gorakhpur & Gomti Nagar, Lucknow</strong>
+                                </span>
+                            </motion.div>
+                        </>
                     )}
                 </motion.div>
             </div>
@@ -101,7 +181,7 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, backgroundImage, blur = false
             {tall && (
                 <div className={styles.scrollCue} aria-hidden="true">
                     <span className={styles.mouse}><span className={styles.dot} /></span>
-                    <span className={styles.cueText}>Scroll</span>
+                    <span className={styles.cueText}>Scroll To Taste</span>
                 </div>
             )}
         </section>

@@ -104,9 +104,44 @@ export const restaurantSchema = (b) => ({
       closes: siteConfig.hours.closes,
     }
   ],
-  servesCuisine: ["North Indian", "Mughlai", "Handi Meat", "Awadhi", "Biryani", "Non-Vegetarian"],
+  servesCuisine: ["North Indian", "Mughlai", "Champaran Handi Mutton", "Handi Meat", "Awadhi", "Dum Biryani", "Halal", "Non-Vegetarian"],
   acceptsReservations: "True",
   hasMenu: `${siteConfig.url}/menu`,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: b.id === "gorakhpur" ? "12480" : "4850",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: b.city,
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Uttar Pradesh",
+    },
+  ],
+  potentialAction: [
+    {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/contact`,
+        inLanguage: "en-US",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: {
+        "@type": "FoodEstablishmentReservation",
+        name: "Table Reservation",
+      },
+    },
+  ],
   sameAs: [
     siteConfig.social.facebook,
     siteConfig.social.instagram,

@@ -5,17 +5,81 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import Reveal from "./Reveal";
 import styles from "./BranchPage.module.css";
-import { siteConfig, branchList, restaurantSchema, mapsLink, mapsEmbed, telHref, waLink } from "../lib/siteConfig";
+import { siteConfig, branchList, restaurantSchema, mapsLink, mapsEmbed, telHref, waLink, fullAddress } from "../lib/siteConfig";
 
 const BranchPage = ({ id, heroImage, intro }) => {
     const branch = siteConfig.branches[id];
     const other = branchList.find((b) => b.id !== id);
 
+    const branchFaq = {
+        "@type": "FAQPage",
+        "@id": `${siteConfig.url}/${branch.id}#faq`,
+        mainEntity: [
+            {
+                "@type": "Question",
+                name: `What is the address and contact number of Adalat Restaurant in ${branch.city}?`,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Adalat Restaurant in ${branch.city} is located at ${fullAddress(branch)}. You can call or WhatsApp our branch directly at ${branch.phones.map((p) => `+91 ${p}`).join(', ')}.`,
+                },
+            },
+            {
+                "@type": "Question",
+                name: `What are the opening hours for Adalat Restaurant ${branch.city}?`,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Adalat Restaurant in ${branch.city} is open daily (Monday to Sunday) from ${siteConfig.hours.display} for dine-in, takeaway, and delivery.`,
+                },
+            },
+            {
+                "@type": "Question",
+                name: `What are the signature dishes at Adalat Restaurant in ${branch.city}?`,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Our signature specialities include Gorakhpur Special Handi Meat, Champaran Handi Chicken, Awadhi Mutton Dum Biryani, and Charcoal Roasted Tandoori Chicken.`,
+                },
+            },
+            {
+                "@type": "Question",
+                name: `Does Adalat Restaurant ${branch.city} provide home delivery and table reservations?`,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Yes, table bookings and home delivery are available across ${branch.city}. Simply call or message on WhatsApp to reserve or order.`,
+                },
+            },
+        ],
+    };
+
+    const branchJsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            restaurantSchema(branch),
+            branchFaq,
+            {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: siteConfig.url,
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 2,
+                        name: `Adalat ${branch.city}`,
+                        item: `${siteConfig.url}/${branch.id}`,
+                    },
+                ],
+            },
+        ],
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", ...restaurantSchema(branch) }) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(branchJsonLd) }}
             />
             <Navbar />
             <Hero
@@ -57,7 +121,7 @@ const BranchPage = ({ id, heroImage, intro }) => {
 
                     <Reveal className={styles.mapWrap} delay={0.12}>
                         <iframe
-                            title={`Map of Adalat Restaurant ${branch.city}`}
+                            title={`Map location of Adalat Restaurant in ${branch.city}`}
                             src={mapsEmbed(branch)}
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"

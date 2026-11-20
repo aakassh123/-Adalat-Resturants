@@ -602,4 +602,49 @@
         padding: 16px 18px;
         font-size: 1rem;
     }
+
+    .ctaButtons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .ctaButtons .btn,
+    .ctaButtons .btn-primary {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .statRow {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .mainTitle {
+        font-size: 1.75rem;
+    }
+
+    .sectionHeading,
+    .sectionHeadingLeft,
+    .ctaHeading {
+        font-size: 1.55rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .mainTitle {
+        font-size: 1.5rem;
+    }
+
+    .leadText {
+        font-size: 0.95rem;
+    }
+
+    .sectionHeading,
+    .sectionHeadingLeft,
+    .ctaHeading {
+        font-size: 1.35rem;
+    }
 }

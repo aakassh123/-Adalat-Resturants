@@ -10,10 +10,25 @@ import FranchiseForm from "../components/FranchiseForm";
 import { siteConfig, branchList, mapsLink, telHref, waLink } from "../lib/siteConfig";
 
 export const metadata = {
-    title: "Contact | Biryani, Handi Restaurant Gorakhpur India",
-    description: "Get contact details, directions, and booking information. Conveniently located near Ramgarh Taal for easy access and quick visits.",
-    keywords: "Adalat Restaurant contact, restaurant in Gorakhpur contact number, restaurant near Ramgarh Taal Gorakhpur, book table Gorakhpur",
+    title: "Contact Adalat Restaurant | Table Booking & Order in Gorakhpur & Lucknow",
+    description: "Contact Adalat Restaurant for table reservations, takeaway, and catering. Kunraghat branch near Ramgarh Taal, Gorakhpur (+91 9125866811) and Ashiyana branch on Kanpur Road, Lucknow (+91 8429397733).",
+    keywords: [
+        "Adalat Restaurant contact number",
+        "book table Adalat Gorakhpur",
+        "Adalat Restaurant Lucknow phone number",
+        "restaurant near Ramgarh Taal Gorakhpur contact",
+        "Ashiyana non veg restaurant phone",
+        "Adalat Restaurant WhatsApp order",
+    ],
     alternates: { canonical: `${siteConfig.url}/contact` },
+    openGraph: {
+        title: "Contact Adalat Restaurant | Gorakhpur & Lucknow Branches",
+        description: "Call or WhatsApp for table reservations and food orders in Gorakhpur and Lucknow.",
+        url: `${siteConfig.url}/contact`,
+        siteName: siteConfig.name,
+        type: "website",
+        images: [{ url: `${siteConfig.url}/hero_contact.webp`, alt: "Contact Adalat Restaurant" }],
+    },
 };
 
 export default function Contact() {

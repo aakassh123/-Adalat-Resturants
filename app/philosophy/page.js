@@ -3,13 +3,32 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
 import ScrollWrapper from "../components/ScrollWrapper";
+import SteamEffect from "../components/SteamEffect";
 import styles from "./philosophy.module.css";
 import Image from 'next/image';
 
+import { siteConfig } from "../lib/siteConfig";
+
 export const metadata = {
-    title: "Our Philosophy | Biryani & Handi Taste Gorakhpur India",
-    description: "Focus on quality ingredients, authentic cooking methods, and consistent service to deliver a reliable and satisfying dining experience.",
-    keywords: "restaurant philosophy Adalat, quality food Gorakhpur, authentic taste philosophy, hospitality values restaurant"
+    title: "Our Handi Philosophy | 100% Earthen Clay Pot Woodfire Cooking | Adalat",
+    description: "Discover the authentic woodfire cooking philosophy of Adalat Restaurant. Slow-simmering Gorakhpur Special Handi Meat in dough-sealed clay pots over embers for deep rustic flavour and melting tenderness.",
+    keywords: [
+        "Handi cooking philosophy",
+        "Mitti ki Handi Gorakhpur",
+        "Champaran mutton cooking technique",
+        "woodfire claypot cooking UP",
+        "authentic Ahuna meat process",
+        "Adalat Restaurant cooking tradition",
+    ],
+    alternates: { canonical: `${siteConfig.url}/philosophy` },
+    openGraph: {
+        title: "Our Handi Philosophy | Traditional Clay Pot Non-Veg Craft | Adalat",
+        description: "The secret behind Adalat's legendary slow-cooked Handi Meat and chicken in Gorakhpur & Lucknow.",
+        url: `${siteConfig.url}/philosophy`,
+        siteName: siteConfig.name,
+        type: "website",
+        images: [{ url: `${siteConfig.url}/hero_philosophy_new.webp`, alt: "Traditional Handi Cooking Process" }],
+    },
 };
 
 export default function Philosophy() {
@@ -47,6 +66,7 @@ export default function Philosophy() {
                                     height={400}
                                     className={styles.featureImage}
                                 />
+                                <SteamEffect intensity="high" />
                             </div>
                             <div className={styles.textContent}>
                                 <p className={styles.text}>

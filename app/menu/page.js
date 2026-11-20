@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import SteamEffect from '../components/SteamEffect';
 import { menuData } from '../data/menuData';
 import { siteConfig } from '../lib/siteConfig';
 import styles from './menu.module.css';
@@ -88,6 +89,7 @@ export default function MenuPage() {
                                                 sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 380px"
                                                 className={styles.categoryImage}
                                             />
+                                            <SteamEffect />
                                             <span className={styles.categoryShade} />
                                         </span>
                                         <span className={styles.categoryContent}>
@@ -129,6 +131,7 @@ export default function MenuPage() {
                                                         sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 380px"
                                                         className={styles.productImage}
                                                     />
+                                                    <SteamEffect />
                                                 </div>
                                                 <div className={styles.cardContent}>
                                                     <h3 className={styles.cardTitle}>{item.name}</h3>
